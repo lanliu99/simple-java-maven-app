@@ -16,5 +16,10 @@ pipeline {
                 }
             }
         }
+        stage('Deploy') { 
+            steps {
+                sh 'oc login -u admin -p redhat https://master.example.com:8443' 
+            }
+        }
     }
 }
