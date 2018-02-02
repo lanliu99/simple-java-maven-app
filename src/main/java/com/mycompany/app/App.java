@@ -1,5 +1,7 @@
 package com.mycompany.app;
 
+import java.util.Date;
+
 /**
  * Hello world!
  */
@@ -11,11 +13,22 @@ public class App
     public App() {}
 
     public static void main(String[] args) {
-        System.out.println(new App().getMessage());
+       while(true){
+		   System.out.println(new Date());
+		   try{
+			Thread.sleep(3000);
+		   }catch(Exception e){
+		   }
+	   }
     }
 
     private final String getMessage() {
         return message;
     }
+	
+    public static void hello() {
+         System.out.println(new App().getMessage());
+    }	
+
 
 }
