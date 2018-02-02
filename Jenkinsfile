@@ -22,7 +22,7 @@ pipeline {
                 sh 'oc login -u admin -p redhat https://master.example.com:8443' 
                 sh 'docker login -u $(oc whoami) -p $(oc whoami -t) 192.168.56.127:30074' 
                 sh 'oc project jenkins'
-                sh 'oc project jenkins || echo "no dc should be deleted"'
+                sh 'oc delete dc/app || echo "no dc should be deleted"'
                 sh 'docker tag jenkins/app:1.0 192.168.56.127:30074/jenkins/app:1.0'
                 sh 'docker push 192.168.56.127:30074/jenkins/app:1.0'
                 sh 'oc new-app -i jenkins/app:1.0'
