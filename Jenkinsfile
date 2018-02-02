@@ -19,6 +19,7 @@ pipeline {
         stage('Deploy') { 
             steps {
                 sh 'oc login -u admin -p redhat https://master.example.com:8443' 
+                sh 'docker login -u $(oc whoami) -p $(oc whoami -t) 192.168.56.127:30074'
             }
         }
     }
