@@ -1,7 +1,7 @@
 pipeline {
     environment {
-        VERSION  = "1_4"
-	LAST_VERSION = "1.3"
+        VERSION  = "1_5"
+	LAST_VERSION = "1_4"
         OTHERS = "abc"
     }
 
