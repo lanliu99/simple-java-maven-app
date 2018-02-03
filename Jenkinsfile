@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                sh 'docker build --no-cache --force-rm -t jenkins/app:1.0 ./'
+                sh 'docker build --no-cache --force-rm -t jenkins/app:1.1 ./'
                 sh 'oc login -u admin -p redhat https://master.example.com:8443' 
                 sh 'docker login -u $(oc whoami) -p $(oc whoami -t) 192.168.56.127:30074' 
                 sh 'oc project jenkins'
