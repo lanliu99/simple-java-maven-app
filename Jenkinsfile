@@ -30,7 +30,7 @@ pipeline {
                 sh 'oc delete dc/app$VERSION || echo "no dc should be deleted"'
                 sh 'docker tag jenkins/app:$VERSION 192.168.56.127:30074/jenkins/app:$VERSION'
                 sh 'docker push 192.168.56.127:30074/jenkins/app:$VERSION'
-                sh 'oc new-app$VERSION -i jenkins/app:$VERSION'
+                sh 'oc new-app -i jenkins/app$VERSION'
 
             }
         }
