@@ -14,7 +14,7 @@ public class App
 
     public static void main(String[] args) {
        while(true){
-		   System.out.println("v1.7:" + new Date());
+		   System.out.println("v1.8:" + new Date());
 		   try{
 			Thread.sleep(3000);
 		   }catch(Exception e){
